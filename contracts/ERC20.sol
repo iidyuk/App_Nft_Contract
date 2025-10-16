@@ -5,19 +5,17 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract MySimpleERC20Token is ERC20, Ownable {
-    // コンストラクタ: トークンの名前、シンボル、初期供給量を設定します。
+    // コンストラクタ: トークンの名前、シンボル、初期供給量を設定
     constructor(uint256 initialSupply)
         ERC20("MySimpleToken", "MST") 
         Ownable(msg.sender)
     {
-        // デプロイ時に指定された初期供給量をデプロイ者のアドレスにミント（発行）します。
+        // デプロイ時に指定された初期供給量をデプロイ者のアドレスにミント（発行）
         _mint(msg.sender, initialSupply);
     }
 
-    // 必要に応じて、追加のミント（発行）関数などを実装できますが、
-    // シンプルな例では初期供給量のみとします。
+    // 必要に応じて、追加のミント（発行）関数などを実装可能。現段階では初期供給量のみ
 
     // 通常のERC-20関数（transfer, balanceOf, approve, allowanceなど）は
-    // OpenZeppelinのERC20コントラクトに実装されているため、
-    // ここで明示的に記述する必要はありません。
+    // OpenZeppelinのERC20コントラクトに実装されているため、ここで明示的に記述する必要はない
 }
